@@ -6,7 +6,7 @@ class PrototypesController < ApplicationController
   # //2020/12/29 add S.Shimada
 
   # 2020/12/29 add S.Shimada アクセス制御1-1
-  before_action :move_to_index, except: [:index, :show, :new]
+  before_action :move_to_index, only: [:edit]
   # //2020/12/29 add S.Shimada アクセス制御1-1
 
   def index
