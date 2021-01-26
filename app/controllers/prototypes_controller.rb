@@ -14,7 +14,7 @@ class PrototypesController < ApplicationController
     # indexアクションに、インスタンス変数@prototypesを定義し、すべてのプロトタイプの情報を代入した
     # @prototypes = Prototype.all
     # N+1問題の対応
-    @prototypes = Prototype.includes(:user)
+    @prototypes = Prototype.includes(:user).order("created_at DESC")
     # //2020/12/28 add S.Shimada 03
   end
   # 2020/12/28 add S.Shimada 01

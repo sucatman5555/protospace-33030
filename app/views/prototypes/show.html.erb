@@ -44,24 +44,24 @@
         <h1 class="clearText">っ。っ。っ。っ。<%= "#{@prototype.concept}" %></h1>
         </section>
         <div class="prototype__detail">
-        <div class="detail__title2">
-          <p><%= simple_format(h(@prototype.catch_copy)) %></p>
-        </div>
+          <div class="detail__title2">
+            <p><%= simple_format(h(@prototype.catch_copy)) %></p>
+          </div>
+          <br>
+          <div class="prototype__hedding">
+            <div class="prototype__manage2">
+              <%= link_to "by #{@prototype.user.name}", "/users/#{@prototype.user.id}", class: :prototype__user %>
+            </div>
+            <% if user_signed_in? && current_user.id == @prototype.user_id %>
+            <div class="prototype__manage2">
+              <%= link_to "編集する", edit_prototype_path(@prototype.id),method: :get,class: :nav__btn2 %>
+              <%= link_to "削除する", prototype_path(@prototype.id), method: :delete,class: :nav__btn2 %>
+            </div>
+            <% end %>
+          </div>
+          <br>
         </div>
       </div>
-      
-      
-      <br>
-      <p class="prototype__hedding">
-        <%= link_to "by #{@prototype.user.name}", "/users/#{@prototype.user.id}", class: :prototype__user %>
-      </p>
-      <br>
-      <% if user_signed_in? && current_user.id == @prototype.user_id %>
-      <div class="prototype__manage">
-        <%= link_to "編集する", edit_prototype_path(@prototype.id),method: :get,class: :nav__btn %>
-        <%= link_to "削除する", prototype_path(@prototype.id), method: :delete,class: :nav__btn %>
-      </div>
-      <% end %>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? %>
@@ -80,8 +80,8 @@
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <% @comments.each do |comment| %>
             <li class="comments_list">
-                  <strong><%= comment.text%></strong>
-                  <%= link_to "（#{comment.user.name}）", "/users/#{comment.user.id}", class: :comment_user %>
+              <strong><%= comment.text%></strong>
+              <%= link_to "（#{comment.user.name}）", "/users/#{comment.user.id}", class: :comment_user %>
             </li>
           <% end %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
