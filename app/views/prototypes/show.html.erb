@@ -1,35 +1,67 @@
+<%# 詳細画面遷移時にJSを用いて１回だけリロードする機能を追加 %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script language="javascript">
+  if ( location.search.indexOf("1") == -1 ) {
+  setTimeout("_reload()",1);
+  }
+  function _reload() {
+  location.href = location.href + "?1";
+  }
+</script>
+
+<meta content="no-cache" name="turbolinks-cache-control">
 <main class="main">
-  <div class="inner">
+  <div class="inner"><br>
     <div class="prototype__wrapper">
-      <p class="prototype__hedding">
-        <%= "#{@prototype.title}"%>
-      </p>
-      <%= link_to "by #{@prototype.user.name}", "/users/#{@prototype.user.id}", class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user.id == @prototype.user_id %>
-        <div class="prototype__manage">
-          <%= link_to "編集する", edit_prototype_path(@prototype.id),method: :get,class: :prototype__btn %>
-          <%= link_to "削除する", prototype_path(@prototype.id), method: :delete,class: :prototype__btn %>
-        </div>
-      <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <div class="prototype__image">
-        <%= image_tag @prototype.image %>
+      <div class="prototype__manage">
+        <input type="button"  value="音声読み上げ" class="btn">
+        　　　
+        <input type="button"  value="読み上げ停止" class="btn2">
       </div>
+      <div class="prototype__detail">
+      <% if @prototype.item.file == nil %>
+            ※音声ファイルの投稿はありません。
+        <% end %>
+      </div>
+      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <section id="speech">
       <div class="prototype__body">
         <div class="prototype__detail">
-          <p class="detail__title">キャッチコピー</p>
+        <h1 class="clearText">タイトル っ。っ。っ。っ。</h1>
+          <p class="detail__title2">[<%= "#{@prototype.title}" %>]</p>
           <p class="detail__message">
-            <%= "#{@prototype.catch_copy}" %>
           </p>
+        </div>
+        <div class="prototype__image">
+          <%= image_tag @prototype.image %>
         </div>
         <div class="prototype__detail">
-          <p class="detail__title">コンセプト</p>
-          <p class="detail__message">
-            <%= "#{@prototype.concept}" %>
-          </p>
+          <% if @prototype.item.file != nil %>
+            <%= audio_tag(@prototype.item, :autoplay => true, :controls => true) %>
+          <% end %>
+        </div>
+        <h1 class="clearText">っ。っ。っ。っ。<%= "#{@prototype.concept}" %></h1>
+        </section>
+        <div class="prototype__detail">
+        <div class="detail__title2">
+          <p><%= simple_format(h(@prototype.catch_copy)) %></p>
+        </div>
         </div>
       </div>
+      
+      
+      <br>
+      <p class="prototype__hedding">
+        <%= link_to "by #{@prototype.user.name}", "/users/#{@prototype.user.id}", class: :prototype__user %>
+      </p>
+      <br>
+      <% if user_signed_in? && current_user.id == @prototype.user_id %>
+      <div class="prototype__manage">
+        <%= link_to "編集する", edit_prototype_path(@prototype.id),method: :get,class: :nav__btn %>
+        <%= link_to "削除する", prototype_path(@prototype.id), method: :delete,class: :nav__btn %>
+      </div>
+      <% end %>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? %>
@@ -55,6 +87,7 @@
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>
+      <Br>
     </div>
   </div>
 </main>

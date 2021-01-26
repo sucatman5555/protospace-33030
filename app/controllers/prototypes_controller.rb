@@ -80,7 +80,7 @@ class PrototypesController < ApplicationController
   def prototype_params
     # prototypesコントローラーのprivateメソッドにストロングパラメーターをセットし、
     # 特定の値のみを受け付けるようにした。且つ、user_idもmergeした
-    params.require(:prototype).permit( :title, :catch_copy, :concept, :image).merge(user_id: current_user.id)
+    params.require(:prototype).permit( :title, :catch_copy, :concept, :image, :item).merge(user_id: current_user.id)
   end
   # //2020/12/28 add S.Shimada 02
   # 2020/12/29 add S.Shimada アクセス制御1-2

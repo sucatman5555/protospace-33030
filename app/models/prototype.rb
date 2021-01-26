@@ -22,4 +22,8 @@ class Prototype < ApplicationRecord
   # 関連しているcommentsテーブルのレコードも同時にdestroyメソッドが実行され、一緒に削除される
   has_many :comments, dependent: :destroy
   # //2020/12/29 add S.Shimada コメント機能の追加によりアソシエーションを追記
+
+  # アップロード機能を追加するので、以下のようにPrototypeモデルに先ほど作成した
+  # 音声ファイル用の「itemカラム」と「ItemUploaderクラス」を紐づけます。
+  mount_uploader :item, ItemsUploader
 end

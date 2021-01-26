@@ -1,11 +1,20 @@
-<div class="card">
-  <%# 部分テンプレートでは@prototypesを単数系で定義する。→prototype%>
-  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id)%>
-  <div class="card__body">
-    <%= link_to "#{prototype.title}", prototype_path(prototype.id), class: :card__title%>
-      <p class="card__summary">
-      <%= "#{prototype.catch_copy}" %>
-      </p>
-      <%= link_to "by #{prototype.user.name}", prototype_path(prototype.id), class: :card__user %>
-  </div>
-</div>
+
+<li class='list'>
+  <%= link_to prototype_path(prototype.id) do %>
+    <div class='item-img-content'>
+      <%= image_tag prototype.image, class: "item-img" %>
+    </div>
+    <div class='item-info'>
+      <h3 class='item-name'>
+        <%= prototype.title %>
+      </h3>
+      <div class='item-price'>
+        <span><%= link_to "by #{prototype.user.name}", "/users/#{prototype.user.id}", class: :prototype__user %><br></span>
+        <div class='star-btn'>
+          <%= image_tag "star.png", class:"star-icon" %>
+          <span class='star-count'>0</span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</li>

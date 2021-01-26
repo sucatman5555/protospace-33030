@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta content="no-cache" name="turbolinks-cache-control">
+    <meta http-equiv="cache-control" content="no-store">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProtoSpace</title>
+    <link rel="stylesheet" href="hue.css">
+    <title>voice</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica:700" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">  
   </head>
 
   <body>
+<div class="btn-group mt-2 mb-4" role="group" aria-label="actionButtons">
+</div>
     <header class="header">
       <div class="inner">
         <div class="nav">
@@ -21,7 +29,7 @@
           <%# ログインしているときは以下を表示するようにしましょう %>
             <div class="nav__right">
               <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout %>
-              <%= link_to "New Proto", new_prototype_path, class: :nav__btn %>
+              <%= link_to "Voice--carD作成", new_prototype_path, class: :nav__btn %>
             </div>
           <%# // ログインしているときは上記を表示するようにしましょう %>
           <% else %>
@@ -37,7 +45,7 @@
     </header>
     <%= yield %>
     <footer class="footer">
-      <p class="copyright">Copyright © PROTO SPACE All rights reserved.</p>
+      <p class="copyright">Copyright © Voice--carD All rights reserved.</p>
     </footer>
   </body>
 </html>

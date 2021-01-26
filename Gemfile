@@ -61,3 +61,11 @@ gem 'devise'
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 
+# 音声ファイル投稿用に追加
+gem 'carrierwave'
+
+# jqueryの導入
+gem 'jquery-rails'
+
+# jqueryの導入
+gem 'bootstrap', '~> 4.3.1'
