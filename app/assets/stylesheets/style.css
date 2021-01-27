@@ -515,6 +515,12 @@ a {
 .item-name {
   font-size: 2.5vh;
   color: rgb(17, 16, 16);
+  margin-bottom: 1vh;
+  text-align: center;
+}
+
+.item-days {
+  color: rgb(17, 16, 16);
 }
 
 .item-price {
@@ -528,6 +534,7 @@ a {
   display: flex;
   align-items: center;
   color: black;
+  font-size: 2vh;
 }
 
 .star-icon {

@@ -75,3 +75,6 @@ gem 'active_hash'
 
 # PV回数の取得
 gem 'impressionist'
+
+# 投稿日付表示用
+gem 'i18n_generators'

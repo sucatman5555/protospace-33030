@@ -73,6 +73,9 @@
               <span class='star-count'>0</span>
             </div>
             <div class="prototype__manage2">
+              <%= "投稿日：#{I18n.l @prototype.created_at, formats: :default}" %>
+            </div>
+            <div class="prototype__manage2">
               <%= link_to "by #{@prototype.user.name}", "/users/#{@prototype.user.id}", class: :prototype__user %>
             </div>
             <% if user_signed_in? && current_user.id == @prototype.user_id %>

@@ -17,16 +17,17 @@
       <%= image_tag prototype.image, class: "item-img" %>
     </div>
     <div class='item-info'>
-      <h3 class='item-name'>
+      <p class='item-name'>
         <%= prototype.title %>
-      </h3>
-        <div class='star-btn'>
-          <%= image_tag "category.png", class:"star-icon" %>
-          <span class='star-count'><%= prototype.category.name %></span>
-        </div>
-      <br>
+      </p>
+      <p class='item-name'>
+      <%= link_to "by #{prototype.user.name}", "/users/#{prototype.user.id}", class: :prototype__user %>
+      </p>
+      <div class='star-btn'>
+        <%= image_tag "category.png", class:"star-icon" %>
+        <span class='star-count'><%= prototype.category.name %></span>
+      </div>
       <div class='item-price'>
-        <span><%= link_to "by #{prototype.user.name}", "/users/#{prototype.user.id}", class: :prototype__user %><br></span>
         <div class='star-btn'>
           <%= image_tag "count.png", class:"star-icon" %>
           <span class='star-count'><%= prototype.impressions_count %></span>
@@ -34,6 +35,9 @@
         <div class='star-btn'>
           <%= image_tag "good.png", class:"star-icon" %>
           <span class='star-count'>0</span>
+        </div>
+          <div class='star-btn'>
+          <%= "(#{I18n.l prototype.created_at, formats: :default})" %>
         </div>
       </div>
     </div>
