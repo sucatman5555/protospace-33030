@@ -581,3 +581,12 @@ body {
   list-style: none;
   align-items: flex-end;
 }
+
+.error-alert {
+}
+
+.error-message {
+  font-size: 1.3vw;
+  list-style: circle;
+  color: rgb(182, 48, 0);
+}
