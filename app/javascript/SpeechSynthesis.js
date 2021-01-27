@@ -30,6 +30,6 @@ function (){
   );
 }
 
-// window.speechSynthesis.onvoiceschanged =　speaking；
+// window.speechSynthesis.onvoiceschanged =speaking；
 // setInterval(speaking,1000);
 // window.addEventListener('load', speaking);

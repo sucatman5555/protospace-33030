@@ -72,3 +72,6 @@ gem 'bootstrap', '~> 4.3.1'
 
 # ActiveHashの導入
 gem 'active_hash'
+
+# PV回数の取得
+gem 'impressionist'

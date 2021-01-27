@@ -16,6 +16,10 @@ class PrototypesController < ApplicationController
     # N+1問題の対応
     @prototypes = Prototype.includes(:user).order("created_at DESC")
     # //2020/12/28 add S.Shimada 03
+    # PVカウントの追加実装
+    # prototypes一覧をPV数の多い順に並び替える。
+    @rank_prototypes = Prototype.order(impressions_count: 'DESC') # ソート機能を追加
+    # //PVカウントの追加実装
   end
   # 2020/12/28 add S.Shimada 01
   def new
@@ -40,14 +44,20 @@ class PrototypesController < ApplicationController
     # showアクションにインスタンス変数@prototypeを定義した。且つ、Pathパラメータで送信されるID値で、
     # Prototypeモデルの特定のオブジェクトを取得するように記述し、それを@prototypeに代入した
     @prototype = Prototype.find(params[:id])
-  # 2020/12/29 add S.Shimada
-  # prototypes/show.html.erbでform_withを使用して、comments#createを実行するリクエストを飛ばしたいので、
-  # @comment = Comment.newというインスタンス変数を生成しておかないといけません。
-  # prototypesテーブルとcommentsテーブルはアソシエーションが組まれているので、
-  # @prototype.commentsとすることで、@prototypeへ投稿されたすべてのコメントを取得できます。
+    # 2020/12/29 add S.Shimada
+    # prototypes/show.html.erbでform_withを使用して、comments#createを実行するリクエストを飛ばしたいので、
+    # @comment = Comment.newというインスタンス変数を生成しておかないといけません。
+    # prototypesテーブルとcommentsテーブルはアソシエーションが組まれているので、
+    # @prototype.commentsとすることで、@prototypeへ投稿されたすべてのコメントを取得できます。
     @comment = Comment.new
     @comments = @prototype.comments.includes(:user)
-  # //2020/12/29 add S.Shimada
+    # //2020/12/29 add S.Shimada
+    # PVカウントの追加実装
+    # ip_address：IPアドレス単位でカウント
+    # session_hash：ユーザー別に詳細にアクセスするたびにカウント
+    # impressionist(@prototype, nil, unique: [:ip_address]) 
+    impressionist(@prototype, nil, unique: [:session_hash]) 
+    # //PVカウントの追加実装
   end
   # //2020/12/28 add S.Shimada 03
   # 2020/12/28 add S.Shimada 04 edit updateを追加（編集機能）

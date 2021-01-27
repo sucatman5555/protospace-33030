@@ -33,4 +33,10 @@ class Prototype < ApplicationRecord
   # ジャンルの選択が「--」の時は保存できないようにする
   validates :category_id, numericality: { other_than: 1 }
   # //カテゴリーの追加実装
+
+  # PVカウントの追加実装
+  # is_impressionable：Prototypeモデルでimpressionistを使用できるようにします。
+  # counter_cache: true：impressions_countカラムがupdateされるようにします。
+  is_impressionable counter_cache: true
+  # //PVカウントの追加実装
 end
