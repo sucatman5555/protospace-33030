@@ -61,6 +61,10 @@
           <br>
           <div class="prototype__hedding">
             <div class='prototype__btn2'>
+              <%= image_tag "category.png", class:"star-icon" %>
+              <span class='star-count'><%= @prototype.category.name %></span>
+            </div>
+            <div class='prototype__btn2'>
               <%= image_tag "count.png", class:"star-icon" %>
               <span class='star-count'><%= @prototype.impressions_count %></span>
             </div>
