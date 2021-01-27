@@ -17,8 +17,8 @@
   </head>
 
   <body>
-<div class="btn-group mt-2 mb-4" role="group" aria-label="actionButtons">
-</div>
+  <div class="btn-group mt-2 mb-4" role="group" aria-label="actionButtons">
+  </div>
     <header class="header">
       <div class="inner">
         <div class="nav">
@@ -45,6 +45,7 @@
           <%# ログインしているときは以下を表示するようにしましょう %>
             <div class="nav__right">
               <ul class='lists-right'>
+                <li><%= link_to "♪ようこそ、#{current_user.name}さん♪", "/users/#{current_user.id}", class: :nav__logout %></li>
                 <li><%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout %></li>
                 <li><%= link_to "Voice--carD作成", new_prototype_path, class: :nav__btn %></li>
               </ul>

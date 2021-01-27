@@ -43,7 +43,6 @@ a {
   background  : linear-gradient(135deg, #c2e8f3, #6498cc, #d971ee);  /* BOXのグラデーション */
   margin-bottom: 1px;
   padding: 10px 0 0 0;
-
 }
 .inner {
   width: 1024px;
@@ -56,17 +55,19 @@ a {
 }
 .logo {
   width: 200px;
+  margin-top: 10px;
 }
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  font-size: 1em;
   color: #87CEFA;
   text-decoration: none;
   user-select: none;
   border: 1px #87CEFA solid;
   border-radius: 3px;
   transition: 0.4s ease;
+  font-family: 'Yusei Magic', sans-serif;
 }
 .nav__btn:hover{
   color: #fff;
@@ -145,13 +146,14 @@ a {
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  font-size: 1em;
   color: #87CEFA;
   text-decoration: none;
   user-select: none;
+  font-family: 'Yusei Magic', sans-serif;
 }
 .nav__logout:hover{
-  opacity: 0.5;
+  opacity: 0.65;
 }
 
 /* フォーム周り */
@@ -217,7 +219,7 @@ a {
   margin-bottom: 40px;
 }
 .card__img {
-  margin-bottom: 16px;
+  margin-top: 20px;
 }
 .card__title {
   display: block;
@@ -612,11 +614,13 @@ body {
   text-decoration: none;
   margin-right: 3vw;
   color: #333333;
+  font-family: 'Yusei Magic', sans-serif;
 }
 
 .brand-list {
   text-decoration: none;
   color: #333333;
+  font-family: 'Yusei Magic', sans-serif;
 }
 
 .lists-right {
