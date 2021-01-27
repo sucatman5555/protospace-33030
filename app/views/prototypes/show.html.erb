@@ -12,7 +12,19 @@
 <meta content="no-cache" name="turbolinks-cache-control">
 <main class="main">
   <div class="inner"><br>
-    <div class="prototype__wrapper">
+    <%# カテゴリー別にカードの色を変える %>
+    <% if @prototype.category_id == 2 %>
+      <div class="prototype__wrapper card_back card_color2">
+    <% elsif @prototype.category_id == 3 %>
+      <div class="prototype__wrapper card_back card_color3">
+    <% elsif @prototype.category_id == 6 %>
+      <div class="prototype__wrapper card_back card_color6">
+    <% elsif @prototype.category_id == 9 %>
+      <div class="prototype__wrapper card_back card_color9">
+    <% else %>
+      <div class="prototype__wrapper card_back card_color">
+    <% end %>
+    <%# //カテゴリー別にカードの色を変える %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <div class="prototype__manage">
         <input type="button"  value="音声読み上げ" class="btn">

@@ -26,4 +26,11 @@ class Prototype < ApplicationRecord
   # アップロード機能を追加するので、以下のようにPrototypeモデルに先ほど作成した
   # 音声ファイル用の「itemカラム」と「ItemUploaderクラス」を紐づけます。
   mount_uploader :item, ItemsUploader
+
+  # カテゴリーの追加実装
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+  # ジャンルの選択が「--」の時は保存できないようにする
+  validates :category_id, numericality: { other_than: 1 }
+  # //カテゴリーの追加実装
 end
