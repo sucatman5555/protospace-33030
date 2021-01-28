@@ -57,6 +57,10 @@ a {
   width: 200px;
   margin-top: 10px;
 }
+.logo2 {
+  width: 480px;
+  margin-top: 10px;
+}
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -219,7 +223,7 @@ a {
   margin-bottom: 40px;
 }
 .card__img {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 .card__title {
   display: block;
@@ -417,6 +421,9 @@ a {
 @media (max-width: 599px) {
   .logo {
     width: 120px;
+  }
+  .logo2 {
+    width: 240px;
   }
   .page-heading {
     font-size: 20px;
