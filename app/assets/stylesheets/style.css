@@ -204,8 +204,8 @@ a {
   text-decoration: underline;
 }
 .page-heading {
-  font-size: 30px;
-  margin-bottom: 28px;
+  font-size: 4vh;
+  padding-top: 2vh;
 }
 .card__wrapper {
   display: flex;
@@ -256,9 +256,8 @@ a {
 .prototype__user{
   display: block;
   color: rgb(55, 82, 236);
-  text-align: center;
+  text-align:end;
   text-decoration: underline;
-  font-size: 18px;
 }
 .prototype__image{
   width: 40%;
@@ -294,6 +293,15 @@ a {
   display: flex;
   justify-content: flex-end;
   padding: 0 20px 0px 20px;
+}
+.prototype__manage3{
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10%;
+}
+.prototype__manage4{
+  padding-left: 60%;
+  font-size: 4vh;
 }
 .prototype__btn{
   display: block;
@@ -513,9 +521,10 @@ a {
 }
 
 .item-name {
+  height: 5.5vh;
   font-size: 2.5vh;
   color: rgb(17, 16, 16);
-  margin-bottom: 1vh;
+  margin-bottom: 2.5vh;
   text-align: center;
 }
 
@@ -526,7 +535,7 @@ a {
 .item-price {
   font-size: 1.5vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 
@@ -546,6 +555,7 @@ a {
 
 .star-count {
   font-size: 2vh;
+  margin-right: 1vw;
 }
 
 body {

@@ -17,6 +17,9 @@
       <%= image_tag prototype.image, class: "item-img" %>
     </div>
     <div class='item-info'>
+      <div class='star-btn'>
+        <%= "(#{I18n.l prototype.created_at, formats: :default})" %>
+      </div>
       <p class='item-name'>
         <%= prototype.title %>
       </p>
@@ -35,9 +38,6 @@
         <div class='star-btn'>
           <%= image_tag "good.png", class:"star-icon" %>
           <span class='star-count'><%= prototype.liked_users.count %></span>
-        </div>
-          <div class='star-btn'>
-          <%= "(#{I18n.l prototype.created_at, formats: :default})" %>
         </div>
       </div>
     </div>

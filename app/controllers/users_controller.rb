@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   # My-carDページ用に追加
   def new
     @user = User.find(current_user.id)
-    @prototypes = @user.prototypes
+    # 最新の投稿順に並ぶよう一度投稿日順に取得し直す。
+    @user_like = @user.liked_prototypes.order("created_at DESC")
   end
   # //My-carDページ用に追加
   # 2020/12/29 add S.Shimada
@@ -14,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # ↓だと全ユーザーのデータが取れてしまう
     # @prototypes = Prototype.all
-    @prototypes = @user.prototypes
+    @prototypes = @user.prototypes.order("created_at DESC")
   end
   # //2020/12/29 add S.Shimada
 end
