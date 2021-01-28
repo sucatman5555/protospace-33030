@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :current_user_like_count
   # My-carDページ用に追加
   def new
     @user = User.find(current_user.id)
@@ -18,4 +19,13 @@ class UsersController < ApplicationController
     @prototypes = @user.prototypes.order("created_at DESC")
   end
   # //2020/12/29 add S.Shimada
+
+  private
+
+  def current_user_like_count
+    # ヘッダーのお気に入り枚数表示用
+    if user_signed_in?
+      @current_user_like_count = User.find(current_user.id)
+    end
+  end
 end

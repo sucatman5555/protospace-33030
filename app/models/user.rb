@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :profile, presence: true
   validates :occupation, presence: true
-  validates :position, presence: true
+  # validates :position, presence: true
   # //2020/12/25 add S.Shimada バリデーションを設定
 
   # 2020/12/28 add S.Shimada Userモデルにアソシエーション記述した

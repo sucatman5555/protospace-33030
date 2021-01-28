@@ -4,7 +4,7 @@ class PrototypesController < ApplicationController
   # ログインページにリダイレクトする
   before_action :authenticate_user!
   # //2020/12/29 add S.Shimada
-
+  before_action :current_user_like_count
   # 2020/12/29 add S.Shimada アクセス制御1-1
   before_action :move_to_index, only: [:edit]
   # //2020/12/29 add S.Shimada アクセス制御1-1
@@ -105,4 +105,11 @@ class PrototypesController < ApplicationController
     end
   end
   # //2020/12/29 add S.Shimada アクセス制御1-2
+
+  def current_user_like_count
+    # ヘッダーのお気に入り枚数表示用
+    if user_signed_in?
+      @current_user_like_count = User.find(current_user.id)
+    end
+  end
 end
