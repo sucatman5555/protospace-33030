@@ -241,7 +241,7 @@ a {
 /* 詳細ページ */
 .prototype__wrapper{
   padding: 10px 0 0 0;
-  min-height: calc(100vh - 161px);
+
   box-shadow: 10px 15px 10px 5px rgb(188, 188, 192);
   border-radius: 10px;
 }
@@ -535,12 +535,13 @@ a {
   align-items: center;
   color: black;
   font-size: 2vh;
+  margin-bottom: 1vh;
 }
 
 .star-icon {
-  height: 2vh;
-  width: 2vh;
-  margin-right: 0.5vw;
+  height: 3vh;
+  width: 3vh;
+  margin-right: 1vw;
 }
 
 .star-count {

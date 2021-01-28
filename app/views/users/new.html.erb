@@ -1,0 +1,59 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.name}さんのMy-carD一覧"%>
+      </h2>
+      <div class='item-contents'>
+        <ul class='item-lists'>
+          <% @user.liked_prototypes.each do |prototype| %>
+          <%= link_to prototype_path(prototype.id) do %>
+            <%# カテゴリー別にカードの色を変える %>
+            <% if prototype.category_id == 2 %>
+              <li class='list card_back card_color2'>
+            <% elsif prototype.category_id == 3 %>
+              <li class='list card_back card_color3'>
+            <% elsif prototype.category_id == 6 %>
+              <li class='list card_back card_color6'>
+            <% elsif prototype.category_id == 9 %>
+              <li class='list card_back card_color9'>
+            <% else %>
+              <li class='list card_back card_color'>
+            <% end %>
+            <%# //カテゴリー別にカードの色を変える %>
+            <div class='item-img-content'>
+              <%= image_tag prototype.image, class: "item-img" %>
+            </div>
+            <div class='item-info'>
+              <p class='item-name'>
+                <%= prototype.title %>
+              </p>
+              <p class='item-name'>
+              <%= link_to "by #{prototype.user.name}", "/users/#{prototype.user.id}", class: :prototype__user %>
+              </p>
+              <div class='star-btn'>
+                <%= image_tag "category.png", class:"star-icon" %>
+                <span class='star-count'><%= prototype.category.name %></span>
+              </div>
+              <div class='item-price'>
+                <div class='star-btn'>
+                  <%= image_tag "count.png", class:"star-icon" %>
+                  <span class='star-count'><%= prototype.impressions_count %></span>
+                </div>
+                <div class='star-btn'>
+                  <%= image_tag "good.png", class:"star-icon" %>
+                  <span class='star-count'><%= prototype.liked_users.count %></span>
+                </div>
+                <div class='star-btn'>
+                  <%= "(#{I18n.l prototype.created_at, formats: :default})" %>
+                </div>
+              </div>
+            </div>
+          </li>
+          <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

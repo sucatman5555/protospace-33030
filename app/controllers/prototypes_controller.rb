@@ -58,6 +58,9 @@ class PrototypesController < ApplicationController
     # impressionist(@prototype, nil, unique: [:ip_address]) 
     impressionist(@prototype, nil, unique: [:session_hash]) 
     # //PVカウントの追加実装
+    
+    # いいね機能実装用
+    @like = Like.new
   end
   # //2020/12/28 add S.Shimada 03
   # 2020/12/28 add S.Shimada 04 edit updateを追加（編集機能）

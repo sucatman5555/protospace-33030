@@ -19,11 +19,14 @@ Rails.application.routes.draw do
     # この記述によって、「ある投稿に対してのコメント」という親子関係を表現したパスが、
     # コメント投稿に必要なリクエストのパスになります。
     resources :comments, only: :create
+    # いいね機能実装用のルーティング
+    resources :likes, only: [:create, :destroy]
   end
   # //2020/12/29 add S.Shimada コメント機能のルーティングを設定
 
   # 2020/12/29 add S.Shimada ユーザーに関するshowアクションのルーティングを設定
-  resources :users, only: :show
+  # My-carDページ用に追加
+  resources :users, only: [:new, :edit, :show]
   # //2020/12/29 add S.Shimada ユーザーに関するshowアクションのルーティングを設定
 
   # 2020/12/25 add S.Shimada【解決策】deviseのログアウト機能でのエラー

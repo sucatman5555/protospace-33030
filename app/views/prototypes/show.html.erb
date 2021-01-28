@@ -70,7 +70,12 @@
             </div>
             <div class='prototype__btn2'>
               <%= image_tag "good.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
+              <span class='star-count'><%= @prototype.likes.count %></span>
+              <% if current_user.already_liked?(@prototype) %>
+                <%= button_to 'Get', prototype_like_path(@prototype), method: :delete ,class: :nav__btn2%>
+              <% else %>
+                <%= button_to 'release', prototype_likes_path(@prototype) %>
+              <% end %>
             </div>
             <div class="prototype__manage2">
               <%= "投稿日：#{I18n.l @prototype.created_at, formats: :default}" %>

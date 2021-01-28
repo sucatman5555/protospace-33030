@@ -5,7 +5,7 @@ class Category < ActiveHash::Base
     { id: 3, name: 'コミニュティ' },
     { id: 4, name: 'アニメ' },
     { id: 5, name: 'ゲーム' },
-    { id: 6, name: 'ファッション・デザイン' },
+    { id: 6, name: 'ファッション' },
     { id: 7, name: '音楽' },
     { id: 8, name: 'スポーツ' },
     { id: 9, name: 'グルメ' },

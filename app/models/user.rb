@@ -23,4 +23,14 @@ class User < ApplicationRecord
   has_many :comments
   # //2020/12/29 add S.Shimada コメント機能の追加によりアソシエーションを追記
 
+  # いいね機能実装用のアソシエーション
+  has_many :prototypes, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_prototypes, through: :likes, source: :prototype
+  # ユーザーが投稿に対して、すでにいいねをしているのかどうかを
+  # 判定することができるようにalready_liked?を定義します。
+  def already_liked?(prototype)
+    self.likes.exists?(prototype_id: prototype.id)
+  end
+  # //いいね機能実装用のアソシエーション
 end

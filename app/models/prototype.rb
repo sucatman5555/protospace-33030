@@ -39,4 +39,13 @@ class Prototype < ApplicationRecord
   # counter_cache: true：impressions_countカラムがupdateされるようにします。
   is_impressionable counter_cache: true
   # //PVカウントの追加実装
+
+  # いいね機能実装用のアソシエーション
+  # 中間テーブルであるLikeテーブルを介してユーザーがどの投稿にいいねをしているのか、
+  # 逆に投稿がどのユーザーにいいねされているのかを簡単に取得できるようにするために、
+  # liked_prototypesとliked_usersなるものを作ります
+  belongs_to :user
+  has_many :likes
+  has_many :liked_users, through: :likes, source: :user
+  # //いいね機能実装用のアソシエーション
 end
