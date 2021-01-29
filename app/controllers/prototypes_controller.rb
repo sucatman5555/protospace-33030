@@ -50,7 +50,7 @@ class PrototypesController < ApplicationController
     # prototypesテーブルとcommentsテーブルはアソシエーションが組まれているので、
     # @prototype.commentsとすることで、@prototypeへ投稿されたすべてのコメントを取得できます。
     @comment = Comment.new
-    @comments = @prototype.comments.includes(:user)
+    @comments = @prototype.comments.includes(:user).order("created_at DESC")
     # //2020/12/29 add S.Shimada
     # PVカウントの追加実装
     # ip_address：IPアドレス単位でカウント

@@ -8,7 +8,11 @@ class CommentsController < ApplicationController
     else
       @prototype = @comment.prototype
       @comments = @prototype.comments
-      render "prototypes/show" # views/prototypes/show.html.erbのファイルを参照しています。
+      if user_signed_in?
+        @current_user_like_count = User.find(current_user.id)
+      end
+      # 空コメント時のエラー対応
+      redirect_to prototype_path(@comment.prototype)
     end
   end
 
