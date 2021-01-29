@@ -67,9 +67,6 @@ gem 'carrierwave'
 # jqueryの導入
 gem 'jquery-rails'
 
-# jqueryの導入
-gem 'bootstrap', '~> 4.3.1'
-
 # ActiveHashの導入
 gem 'active_hash'
 
