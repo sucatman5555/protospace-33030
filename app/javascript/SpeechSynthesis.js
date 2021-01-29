@@ -16,9 +16,9 @@ function (){
   btn.addEventListener( 'click', function() {
     var msg = new SpeechSynthesisUtterance();
     msg.text = text; 
-    msg.volume = 0.5; //ボリューム
-    msg.rate = 0.95;  //レート
-    msg.pitch = 0.9; //ピッチ
+    msg.volume = 0.8; //ボリューム
+    msg.rate   =   1; //レート
+    msg.pitch  =   1; //ピッチ
     msg.text = text;
     // msg.name = 'Google 日本語'; //言語
     msg.lang = 'ja-JP'; //言語
