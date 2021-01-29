@@ -81,3 +81,7 @@ gem 'i18n_generators'
 
 # S3のストレージに切り替え
 gem "aws-sdk-s3", require: false
+# CarrierwaveのS3設定用
+gem 'fog-aws'
+# 環境変数の管理
+gem 'dotenv-rails'
