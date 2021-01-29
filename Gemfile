@@ -78,3 +78,6 @@ gem 'impressionist'
 
 # 投稿日付表示用
 gem 'i18n_generators'
+
+# S3のストレージに切り替え
+gem "aws-sdk-s3", require: false
