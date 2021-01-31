@@ -48,4 +48,13 @@ class Prototype < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
   # //いいね機能実装用のアソシエーション
+  # 検索機能実装
+  def self.search(search)
+    if search != ""
+      Prototype.where('title LIKE(?)', "%#{search}%")
+    else
+      Prototype.all
+    end
+  end
+  # //検索機能実装
 end

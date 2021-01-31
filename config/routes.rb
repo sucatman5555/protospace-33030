@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     # いいね機能実装用のルーティング
     resources :likes, only: [:create, :destroy]
+    # 検索機能の実装
+    collection do
+      get 'search'
+    end
   end
   # //2020/12/29 add S.Shimada コメント機能のルーティングを設定
 

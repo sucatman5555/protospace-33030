@@ -87,6 +87,11 @@ class PrototypesController < ApplicationController
     redirect_to root_path
   end
   # //2020/12/28 add S.Shimada 05
+  # 検索機能実装
+  def search
+    @prototypes_search = Prototype.search(params[:keyword])
+  end
+  # //検索機能実装
   
   # 2020/12/28 add S.Shimada 02
   private

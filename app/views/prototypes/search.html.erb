@@ -1,0 +1,15 @@
+<main class="main">
+
+  <div class="inner">
+    <%# 商品一覧 %>
+    <div class='item-contents'>
+      <h2 class="page-heading"><%= "「#{params[:keyword]}」の検索結果" %></h2>
+      <ul class='item-lists'>
+        <% @prototypes_search.each do |prototype| %>
+        <%= render partial: "prototype", locals: { prototype: prototype } %>
+        <% end %>
+      </ul>
+    </div>
+    <%# /商品一覧 %>
+  </div>
+</main>
