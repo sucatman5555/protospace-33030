@@ -53,6 +53,10 @@
             <div class="nav__right">
               <ul class='lists-right'>
                 <li><%= link_to "♪ようこそ、#{current_user.name}さん♪", "/users/#{current_user.id}", class: :nav__login %></li>
+              </ul>
+            </div>
+            <div class="nav__right">
+              <ul class='lists-right'>
                 <li><%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout %></li>
                 <li><%= link_to "Voice--carD作成", new_prototype_path, class: :nav__btn %></li>
               </ul>

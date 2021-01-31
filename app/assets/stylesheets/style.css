@@ -158,9 +158,9 @@ a {
 }
 .nav__login{
   display: inline-block;
-  padding: 0.4em 0;
-  font-size: 0.8em;
-  color: #87CEFA;
+  padding: 0.4em 1.6em;
+  font-size: 1em;
+  color: #bbee88;
   text-decoration: none;
   user-select: none;
   font-family: 'Yusei Magic', sans-serif;
