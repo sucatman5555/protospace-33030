@@ -541,7 +541,7 @@ a {
 
 .item-name {
   height: 5.5vh;
-  font-size: 2.5vh;
+  font-size: 3vh;
   color: rgb(17, 16, 16);
   margin-bottom: 2.5vh;
   text-align: center;
@@ -565,6 +565,13 @@ a {
   font-size: 2vh;
   margin-bottom: 1vh;
 }
+.star-btn-top {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-size: 2.5vh;
+  margin-bottom: 1.5vh;
+}
 
 .star-icon {
   height: 3vh;
@@ -574,6 +581,10 @@ a {
 
 .star-count {
   font-size: 0.8em;
+  margin-right: 0.2em;
+}
+.star-count-top {
+  font-size: 0.9em;
   margin-right: 0.2em;
 }
 

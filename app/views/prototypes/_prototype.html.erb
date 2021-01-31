@@ -26,18 +26,18 @@
       <p class='item-name'>
       <%= link_to "by #{prototype.user.name}", "/users/#{prototype.user.id}", class: :prototype__user %>
       </p>
-      <div class='star-btn'>
+      <div class='star-btn-top'>
         <%= image_tag "category.png", class:"star-icon" %>
-        <span class='star-count'><%= prototype.category.name %></span>
+        <span class='star-count-top'><%= prototype.category.name %></span>
       </div>
       <div class='item-price'>
-        <div class='star-btn'>
+        <div class='star-btn-top'>
           <%= image_tag "count.png", class:"star-icon" %>
-          <span class='star-count'><%= prototype.impressions_count %></span>
+          <span class='star-count-top'><%= prototype.impressions_count %></span>
         </div>
-        <div class='star-btn'>
+        <div class='star-btn-top'>
           <%= image_tag "good.png", class:"star-icon" %>
-          <span class='star-count'><%= prototype.liked_users.count %></span>
+          <span class='star-count-top'><%= prototype.liked_users.count %></span>
         </div>
       </div>
     </div>
