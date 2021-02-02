@@ -11,7 +11,7 @@ class User < ApplicationRecord
   # //2020/12/25 add S.Shimada バリデーションを設定
 
   # 2020/12/28 add S.Shimada Userモデルにアソシエーション記述した
-  has_many :prototypes
+  # has_many :prototypes
   # //2020/12/28 add S.Shimada Userモデルにアソシエーション記述した
   
   # 2020/12/29 add S.Shimada コメント機能の追加によりアソシエーションを追記

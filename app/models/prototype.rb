@@ -16,7 +16,7 @@ class Prototype < ApplicationRecord
   # //2020/12/28 add S.Shimada Prototypeモデルに、has_one_attachedを使用してimageカラムとのアソシエーションを記述した
 
   # 2020/12/29 add S.Shimada コメント機能の追加によりアソシエーションを追記
-  has_many :comments
+  # has_many :comments
   
   # dependent: :destroyを指定すると、prototypesテーブルのレコードが削除された場合、
   # 関連しているcommentsテーブルのレコードも同時にdestroyメソッドが実行され、一緒に削除される
@@ -44,7 +44,7 @@ class Prototype < ApplicationRecord
   # 中間テーブルであるLikeテーブルを介してユーザーがどの投稿にいいねをしているのか、
   # 逆に投稿がどのユーザーにいいねされているのかを簡単に取得できるようにするために、
   # liked_prototypesとliked_usersなるものを作ります
-  belongs_to :user
+  # belongs_to :user
   has_many :likes, dependent: :destroy
   has_many :liked_users, through: :likes, source: :user
   # //いいね機能実装用のアソシエーション
