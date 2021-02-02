@@ -45,7 +45,7 @@ a {
   padding: 10px 0 0 0;
 }
 .inner {
-  width: 1024px;
+  width: 70vw;
   margin: 0 auto;
 }
 .nav {
@@ -522,7 +522,7 @@ a {
   padding: 1vw;
   box-shadow: 10px 15px 10px 5px rgb(188, 188, 192);
   border-radius: 10px;
-  margin: 40px 20px;
+  margin: 20px 20px;
 }
 
 .item-img-content {
@@ -644,7 +644,7 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-  padding: 1vh 0;
+  padding: 0.2vh 0;
 }
 
 .lists-left {
