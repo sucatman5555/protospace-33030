@@ -1,5 +1,8 @@
 # <a href="https://github.com/sucatman5555"><img src="https://github.com/sucatman5555/protospace-33030/blob/master/app/assets/images/logo.png?raw=true" width="240px;" /></a>（ボイスカード） 
 
+
+![Image from Gyazo](https://i.gyazo.com/aff99601ef21969bb8d1753cef5fe066.jpg)
+
 「声で伝えるSNSサービス！！」  <br>Voice--carDは、投稿した文章を読み上げたり音声ファイルを投稿して発信する新感覚SNSです！<br>
 
 **ログイン方法**
@@ -13,7 +16,8 @@
 
 # :microphone: 利用方法
 **【Voice--carDの作成】**
-1. 画面右上の「Voice--carD作成」ボタンをクリックする。
+1. 画面右上の「Voice--carD作成」ボタンをクリックする。<br>
+![Image from Gyazo](https://i.gyazo.com/f04592b3699f3ec426653245bf00730e.png)
 
 2. Voice--carD作成画面にて以下の記入をして投稿する。
   - タイトル記入
@@ -21,16 +25,20 @@
   - メッセージ記入
   - 音声読み上げ文章記入欄（※音声読み上げをして欲しい内容を記述する）
   - サムネイル投稿
-  - 音声ファイル投稿(※空のまま投稿可能です)　
+  - 音声ファイル投稿(※空のまま投稿可能です)　<br>
+![Image from Gyazo](https://i.gyazo.com/bbf6ab8d9d712148b04a2ab3bccd2c2b.png)
 
-3. 投稿完了です！！TOP画面に作成したVoice--carDが表示されます。
+3. 投稿完了です！！TOP画面に作成したVoice--carDが表示されます。<br>
+![Image from Gyazo](https://i.gyazo.com/6ea5a6374bee64f19a125894edfa82f3.png)
 
 **【Voice--carDの閲覧】**
-1. TOPページにて聞きたいVoice--carDをクリックする。
+1. TOPページにて視聴したいVoice--carDをクリックする。<br>
+![Image from Gyazo](https://i.gyazo.com/6f722cf64d714421262f705210478030.png)
 
 2. Voice--carDに音声ファイルが投稿されている場合は自動で音声ファイルが再生されます。
 <br>また、音声読み上げを利用する場合は「音声読み上げ」ボタンをクリックすることで、
-<br>カード作成者が投稿時に「音声読み上げ文章欄」で記入した文章を読み上げます。
+<br>カード作成者が投稿時に「音声読み上げ文章欄」で記入した文章を読み上げます。<br>
+![Image from Gyazo](https://i.gyazo.com/461cb5cab1f9679bc653c37047288de6.png)
 <br><br>
 
 # :mag_right: なぜこのサービスを作ったのか:question:
@@ -121,7 +129,8 @@
 
 <br>
 
-### スマホ用のUI
+### スマホ対応のUI
+![Image from Gyazo](https://i.gyazo.com/75857533b252ad4d17c7c56df9765b28.jpg)
 
 <br>
 
