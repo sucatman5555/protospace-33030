@@ -3,7 +3,7 @@
 
 ![Image from Gyazo](https://i.gyazo.com/aff99601ef21969bb8d1753cef5fe066.jpg)
 
-「声で伝えるSNSサービス！！」  <br>Voice--carDは、投稿した文章を読み上げたり音声ファイルを投稿して発信する新感覚SNSです！<br>
+「音声で伝えるSNSサービス！！」  <br>Voice--carDは、投稿した文章を読み上げたり音声ファイルを投稿して発信する新感覚SNSです！<br>
 
 **ログイン方法**
 
